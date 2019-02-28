@@ -1,0 +1,25 @@
+procedure incrementa(in: head, r)
+    var temp: pointer
+    var new_node: pointer
+
+    temp:= head
+    while temp.next != NULL do
+        temp := temp.next
+    end while
+
+    while temp != NULL do
+        if temp.info = 1 .AND. r = 1 then
+            temp.info := 0
+            if temp.prev = NULL then                
+                new_node.info:= 1
+                new_node.link:= head
+                new_node.prev:= head.prev
+                head:= new_node
+            end if
+        else if temp.info = 0 .AND. r = 1 then
+            temp.info:= 1
+            r:= 0
+        end if
+        temp := temp.prev
+    end while
+end procedure

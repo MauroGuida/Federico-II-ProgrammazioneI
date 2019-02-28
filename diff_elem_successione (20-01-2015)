@@ -1,0 +1,53 @@
+var N1,N2: integer
+
+procedure diff_elem_successione(in N1,N2: out diff)
+    var i,k: integer
+    var diff_tempN1, diffN1: integer
+    var diff_tempN2, diffN2: integer
+    var diff_boolN1, diff_boolN2: bool
+    k:=4
+
+    if N1<N2 and N1>sucess(a,3)
+//la differenza con il primo elemento della successione  sarà sempre uguale a N stesso
+        diffN1:=N1-sucess(a,3)
+        diffN2:=N2-sucess(a,3)
+        diff_boolN1 := diff_boolN2 := .false.
+
+        repeat
+            //PER N1
+            if sueccess(a,k)> N1 then
+                diff_tempN1:=sueccess(a,k)-N1
+            else if sueccess(a,k)< N1 then
+                diff_tempN1:=N1-sueccess(a,k)
+            end if
+
+            if diff_tempN1>diffN1 then
+                diff_boolN1 := .true.
+            else
+                diffN1:=diff_tempN1
+            end if
+            
+            //PER N2
+            if sueccess(a,k)> N2 then
+                diff_tempN2:=sueccess(a,k)-N2
+            else if sueccess(a,k)< N2 then
+                diff_tempN2:=N2-sueccess(a,k)
+            end if
+
+            if diff_tempN2>diffN2 then
+                diff_boolN2 := .true.
+            else
+                diffN2:=diff_tempN2
+            end if
+            
+            k:=k+1
+            
+        until (diff_boolN1 = .true. and diff_boolN2 = .true.)
+    end if
+
+    if diffN1 < diffN2 then
+        print N1, diffN1
+    else
+        print N2, diffN2
+    end if
+end procedure

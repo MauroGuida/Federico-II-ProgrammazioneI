@@ -1,0 +1,45 @@
+var k, NUMERO: integer
+
+procedure somma_elementi_uguale_numero (in: k,NUMERO out: somma, valore, posizione)
+    var somma: logical
+    var valore: integer
+    var posizione: integer
+    var i: integer
+    var success: integer
+    var num_temp: integer
+    var a1,a2,a3: integer
+
+    i := 4
+    num_temp := 0
+    somma:= .false.
+    
+    a1:= 0
+    a2:= 1
+    a3:= 2
+    
+    if NUMERO>2 then
+        while i <= k and somma = .false. and num_temp <= NUMERO do
+            success:= a1 + 2*a2 + a3
+            if i mod 2 = 0 then
+                num_temp := num_temp + success
+            end if
+
+            if num_temp = NUMERO then
+                somma := .true.
+                valore := NUMERO
+                posizione := i
+            else
+                i:=i+1
+                a1:= a2
+                a2:= a3
+                a3:= success
+            end if
+        end while
+
+        if (i > k and somma = .false.) or num_temp > NUMERO then
+            somma := .false.
+            valore := a1
+            posizione := i-2
+        end if
+    end if
+end procedure

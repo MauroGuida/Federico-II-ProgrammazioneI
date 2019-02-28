@@ -1,0 +1,27 @@
+var A(HxK): integer
+
+function sommaRIGA_uguale_elemento: logical
+    var i, j, e: integer
+    var somma: integer
+    var controllo: logical
+
+    i:=1
+    controllo:= .false.
+
+    while i<=H-1 and controllo = .false. do
+        somma:=0
+        for j:=1 to j=K do
+            somma:= somma - A(i,j)
+        end for
+        e:=1
+        while e<=K and controllo:= .false. do
+            if somma = A(i+1, e) then
+                controllo:= .true.
+            else
+                e:=e+1
+            end if
+        end while
+        i:=i+1
+    end while
+    sommaRIGA_uguale_elemento:= controllo
+end function

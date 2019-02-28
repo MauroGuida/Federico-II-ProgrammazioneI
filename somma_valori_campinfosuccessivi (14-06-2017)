@@ -1,0 +1,23 @@
+function precedente_maggiore_sommasuccessivi(head): logical
+    var somma: integer
+    if head.link != NULL then
+        somma:= somma_valori_campinfosuccessivi(head.link)
+        if head.info > somma then
+            precedente_maggiore_sommasuccessivi(head.link)
+        else
+            precedente_maggiore_sommasuccessivi := .false.
+        end if
+    else
+        precedente_maggiore_sommasuccessivi := .true.
+    end if
+end function
+
+
+function somma_valori_campinfosuccessivi (head): integer
+    var somma: integer
+    if head != NULL then
+        somma := head.info + somma_valori_campinfosuccessivi(head.link)
+    else
+        somma_valori_campinfosuccessivi := 0
+    end if
+end function

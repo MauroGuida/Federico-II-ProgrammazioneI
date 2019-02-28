@@ -1,0 +1,18 @@
+function elimina_da_lista (list, elem)
+    var temp: pointer
+        
+    if list = NULL then
+        elimina_da_lista:= list
+    else
+        temp:= list.link
+        if list.info = elem then
+            list:= temp
+            elimina_da_lista:= elimina_da_lista(list, elem)
+        else if temp.info = elem then
+            list.link:= temp.link
+            elimina_da_lista:= elimina_da_lista(list.link, elem)
+        else
+            elimina_da_lista:= elimina_da_lista(list.link, elem)
+        end if
+    end if
+end function

@@ -1,0 +1,16 @@
+function campoinfo_uguale (head): logical
+    var data: integer
+    var next: Pointer   
+    data:= head.info
+
+    if head.link != NULL then
+        next:= head.link
+        if data = next.info then
+            campoinfo_uguale(next)
+        else
+            campoinfo_uguale:= .false.
+        end if
+    else
+        campoinfo_uguale:= .true.
+    end if
+end function

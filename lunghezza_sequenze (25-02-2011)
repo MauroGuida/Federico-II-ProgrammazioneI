@@ -1,0 +1,41 @@
+var A(N): array of integer
+var B(N): array of integer
+var M: integer
+var OK: logical
+
+procedure lunghezza_sequenze (in: A(N), B(N) out: OK)
+    var contorllo: logical
+    var i, j, k,  cont: integer
+
+    controllo:= .true.
+    i:=1
+    k:=1
+    
+    while i<=N and controllo = .true. do
+        cont:=1
+        j:=i
+        while A(j)=A(j+1) and j != N do
+            cont:=cont+1
+            j:=j+1
+        end while
+
+        if cont != B(k) then
+            controllo:= .false.
+        else
+            i=j+1
+            k:=k+1
+        end if
+    end while
+
+    if controllo = .false. then
+        OK:=.false.
+    else
+        OK:=.true.
+        while k<=N do
+            if B(k)!=0 then
+                OK:=.false.
+            end if
+        k:=k+1
+        end while
+    end if
+end procedure

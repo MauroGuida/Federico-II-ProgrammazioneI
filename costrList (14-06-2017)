@@ -1,0 +1,55 @@
+structure node
+    var info: integer
+    var link: pointer
+end
+
+var head: pointer
+Head:= NULL
+
+A)
+function costrList_ric(N): listPointer
+    var temp: pointer
+    
+    if N > 1 then
+        temp:= node
+        temp.info:= N
+        temp.link:= head
+        head:= temp
+        costrList_ric:= costrList_ric(N-1)
+    else
+        temp:= node
+        temp.info:= N
+        temp.link:= head
+        head:= temp
+    end if
+end function
+
+B)
+function costrList_it(N): listPointer
+    var i: integer
+    var current: Pointer
+
+    current:= node
+    head:= current
+    for i:=1 to N do
+        current.info:= i
+        if i=N then
+            current.link:= NULL
+        else
+            current.link:= node
+            current:= current.link
+        end if
+    end for
+end function
+
+//FORMA BRUTTA
+function costrList_it(N): listPointer
+    var i: integer
+    
+    for i:=N to 1 step -1 do
+        temp:= node
+        temp.info:= i
+        temp.link:= head
+        head:= temp
+    end for
+end function

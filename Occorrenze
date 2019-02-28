@@ -1,0 +1,28 @@
+Siano dati 2 array 1D di tipo character, A di dimensioni N, B di dimensioni M, con N<M. Progettare in Plike un algoritmo, sotto forma di function (function occorrenze_A_in_B) che restituisca in output il numero di occorrenze di A in B.
+Ad esemoio se A=aa e B=ccdaraaaabaa allora la function restituisce 4.
+Progettare anche, in PLike, un algoritmo che richiami la function.
+
+var A(N): array of integer
+var B(M): array of integer
+function occorrenze_A_in_B (A,B)
+    var i,k,j: integer
+    var occorrenze: integer
+    
+    i:=1
+    occorrenze:= 1
+    
+    for j:=1 to i= N do
+        
+        k:= j
+        while (A(i) = B(k) and i<=N) do
+            i:= i+1
+            k:= k+1
+        end while
+
+        if i>N then
+            occorrenze:= occorrenze+1
+        end if
+
+        i:=1
+    end for
+end function

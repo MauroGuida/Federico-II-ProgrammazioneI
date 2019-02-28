@@ -1,0 +1,25 @@
+var A(mXn): Array of integer //m pari, numero di prove per n studenti
+var P(1...m): Array of integer //punteggio minimo per superare la prova
+
+procedure voto (in: A, P out: RIS(1...n)
+    var i: integer //prove m (pari)
+    var j: integer //studenti n
+    var RIS(1...n): Array of integer
+    var voto_min: integer
+
+    for j:=1 to j=n do
+        for i:=1 to j=m do
+            if A(i,j) >= P(i) then
+                RIS(j):= RIS(j) + A(i,j)
+            End IF
+        End For
+    End For
+
+    voto_min:= 18*(m/2)
+
+    for j:=1 to j=n do
+        if RIS(j) < voto_min
+            RIS(j):=0
+        End IF
+    End for
+End Procedure

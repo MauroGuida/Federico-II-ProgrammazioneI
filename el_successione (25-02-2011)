@@ -1,0 +1,51 @@
+procedure el_successione (in: N1, N2, K out: N_EL)
+    var N_EL(N): array of integer
+    var elem: integer
+    var j: integer    
+    var a1, a2, a3, success: integer
+
+    a1:= 0 a2:= 1 a3:= 2
+    j:=1
+
+    if N1 < N2 and N1 >= 0 and K>0 then
+        success:= a1
+        while success < N1 do
+            if N1 = 1 then
+                success:= a2
+            else if N1 = 2 then
+                success:= a3
+            else 
+                success:= a3 + 2*a2 + a1
+                a1:= a2
+                a2:= a3
+                a3:= success
+            end if
+        end while
+        while success <= N2 and j<=K do
+            if N1 = 0 then
+                N_EL(j):= success
+                j:=j+1
+                success:= a2
+            else if N1 = 1 or success = 1 then
+                N_EL(j):= success
+                j:=j+1
+                success:= a3
+            else if N1 = 2 or success = 2 then
+                success:= a3
+                N_EL(j):= success
+                j:=j+1
+                a1:= a2
+                a2:= a3
+                a3:= success
+                success:= a3 + 2*a2 + a1
+            else
+                N_EL(j):= success
+                j:=j+1
+                a1:= a2
+                a2:= a3
+                a3:= success
+                success:= a3 + 2*a2 + a1
+            end if
+        end while
+    end if
+end procedure

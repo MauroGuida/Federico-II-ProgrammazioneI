@@ -1,0 +1,25 @@
+var A(AlphaxBeta): integer
+
+function quattro_elementi_uguali_somma_altri(A, Alpha, Beta): logical
+    var i,k: integer
+    var somma_temp1, somma_temp2: integer
+    var controllo: logical
+
+    if Alpha mod 2 = 0 and Beta > 5 then
+        k := 2
+        controllo:= .false.
+        while controllo = .false. and k <= alpha do
+            somma_temp1 := A(k, 1) + A(k, 3) + A(k, 4) + A(k, Beta-1)
+            somma_temp2 := A(k, 2) + A(k, beta)
+            for i:= 5 to i = beta-2 do
+                somma_temp2 := somma_temp2 + A(k.i)
+            end for
+            if somma_temp1 = somma_temp2 then
+                controllo:= .true.
+            else
+                k=k+2
+            end if
+        end while
+        quattro_elementi_uguali_somma_altri:= controllo
+    end if
+end function

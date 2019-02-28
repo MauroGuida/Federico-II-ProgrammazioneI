@@ -1,0 +1,23 @@
+function carattere_in_riga(A, N, M): logical
+    var i,k,k2: integer //N righe M colonne
+    var controllo: logical
+
+    controllo:= .true.
+    i:= 1
+    while i<=N-1 and controllo= true do
+        k:= 1
+        while k<=M and controllo= true do
+            k2:= 1
+            while k2<=M and controllo= true do
+                if A(i,k) = A(i+1,k2) then
+                    controllo:= .false.
+                end if
+                k2:= k2+1
+            end while
+            k:= k+1
+        end while
+        i:= i+1
+    end while
+
+    carattere_in_riga:= controllo
+end function

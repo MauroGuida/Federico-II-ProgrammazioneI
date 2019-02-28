@@ -1,0 +1,24 @@
+Procedure merge (in: Head1, Head2 out: Head3)
+    var elem: integer
+    
+    while Head1 != NULL and Head2 != NULL do
+        if Head1.info <= Head2.info then
+            pop(head1, elem)
+            push(head3, elem)
+        else if Head2.info <= Head1.info then
+            pop(head2, elem)
+            push(head3, elem)
+        end if
+    end while
+
+    //if non necessario dato che la condizione viene verificata dal while
+    while Head1 != NULL do
+        pop(head1, elem)
+        push head3, elem)
+    end while
+
+    while Head2 != NULL do
+        pop(head2, elem)
+        push(head3, elem)
+    end while
+end procedure

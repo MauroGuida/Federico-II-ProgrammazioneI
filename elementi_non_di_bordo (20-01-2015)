@@ -1,0 +1,16 @@
+var A(MxN): array of integer
+
+procedure elementi_non_di_bordo (in A(MxN) out coordinate(MxN))
+    var i,j,h: integer
+    var coordinate(Mx2)
+    h = 1
+    for i:=2 to i=M-1 do
+        for j:=2 to J=N-1 do
+            if A(i,j)>A(i-1,j) and A(i,j)>A(i+1,j) and A(i,j)>A(i,j-1) and A(i,j)>A(i,j+1) then
+                coordinate(h,1):=i
+                coordinate(h,2):=j
+                h = h+1
+            end if
+        end for
+    end for
+end procedure

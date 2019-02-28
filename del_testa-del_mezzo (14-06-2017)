@@ -1,0 +1,24 @@
+procedure del_testa (in: head, ELEM)
+    if head.info = ELEM and head != NULL then
+        head := head.link
+        del_testa(head, ELEM)
+    end if
+end procedure
+
+procedure del_mezzo (in: head, ELEM)
+    var temp: Pointer
+
+    if head != NULL then    
+        temp:= head.link    
+        if temp.info = ELEM then
+            head.link := temp.link
+        else
+            del_mezzo(temp,ELEM)
+        end if
+    end if
+end procedure
+
+procedure delete_elem (head, ELEM)
+    del_testa(head, ELEM)
+    del_mezzo(head, ELEM)
+end procedure

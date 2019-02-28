@@ -1,0 +1,44 @@
+var tablet_negozio(Kx2): array of integer
+var tablet_deposito(Yx2): array of integer
+
+procedure Quantità_tablet (in: tablet_negozio(Kx2), tablet deposito(Yx2) out: totale_tablet(Jx2))
+    var totale_tablet(Jx2): array of integer
+    var i,s,f: integer
+    i:=1//TOTALE
+    s:=1//NEGOZIO
+    f:=1//DEPOSITO
+       
+    while s<=K and f<=Y do
+        if tablet_negozio(s,1) < tablet_deposito(f,1) then
+            totale_tablet(i,1) := tablet_negozio(s,1)
+            totale_tablet(i,2) := tablet_negozio(s,2)
+            s:=s+1
+        else if tablet_deposito(f,1) < tablet_negozio(s,1) then
+            totale_tablet(i,1) := tablet_deposito(f,1)
+            totale_tablet(i,2) := tablet_deposito(f,2)
+            f:=f+1
+        else if tablet_deposito(f,1) = tablet_negozio(s,1) then
+            totale_tablet(i,1) := tablet_deposito(f,1)
+            totale_tablet(i,2) := tablet_deposito(f,2) + tablet_negozio(s,2)
+            s:=s+1
+            f:=f+1
+        end if
+        i:=i+1
+    end while
+
+    if s>K and f<=Y then
+        repeat
+            totale_tablet(i,1) := tablet_deposito(f,1)
+            totale_tablet(i,2) := tablet_deposito(f,2)
+            i:= i+1
+            f:= f+1
+        until f>Y
+    else if f>Y and s<=K then
+        repeat
+            totale_tablet(i,1) := tablet_negozio(s,1)
+            totale_tablet(i,2) := tablet_negozio(s,2)
+            i:= i+1
+            s:= s+1
+        until s>K
+    end if  
+end procedure

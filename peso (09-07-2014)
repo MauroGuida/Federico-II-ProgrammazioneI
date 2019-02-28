@@ -1,0 +1,12 @@
+function peso (head, x, somma): logical
+    if head != NULL then
+        somma:= somma + head.info
+        if head.link != NULL and somma < X then
+            peso:= peso (head, x, somma)
+        else if somma > X then
+            peso:= .false.
+        else if somma = X then
+            peso:= .true.
+        end if
+    end if
+end function

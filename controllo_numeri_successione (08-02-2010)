@@ -1,0 +1,28 @@
+function controllo_numeri_successione (N1, N2, N3): logical
+    var temp: integer
+    var a1, a2, a3, cont1, cont2: integer
+    cont1 := cont2 := 0
+    a1:=0 a2:=1 a3:=2
+    temp := a1+2*a2+a3
+
+    while temp <= N3 do
+        if temp >= N1 and temp <= N2 then
+            cont1:=cont1+1
+        end if
+
+        if temp > N2 and temp <= N3 then
+            cont2:=cont2+1
+        end if
+
+        a1:=a2
+        a2:=a3
+        a3:=temp
+        temp := a1+2*a2+a3
+    end while
+
+    if cont1=cont2 then
+        controllo_numeri_successione := .true.
+    else
+        controllo_numeri_successione := .false.
+    end if
+End function

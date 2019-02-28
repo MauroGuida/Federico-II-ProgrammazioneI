@@ -1,0 +1,45 @@
+var A(MxN): array of integer
+function duerig_duecol(A(MxN)): logical
+    var i,k: integer //Righe,Colonne
+    var righe, colonne: logical
+    
+    i:=1
+    righe:= .false.
+
+    while i<=M-1 and righe = .false. do
+        righe:= .true.
+        k:=1
+        while k<=N and righe = .true. do
+            if A(i,k) != A(i+1,k) then
+                righe:= .false.
+            end if
+            k:= k+1
+        end while
+        i=i+1
+    end while
+
+    if righe = .true. then
+        k:=1
+        colonne:= .false.
+
+        while k<=N-1 and colonne = .false. do
+            colonne:= .true.
+            i:=1
+            while i<=M and colonne = .true. do
+                if A(i,k) != A(i,k+1) then
+                    colonne:= .false.
+                end if
+                i:= i+1
+            end while
+            k=k+1
+        end while
+        
+        if colonne = .true then
+            dueig_duecol:= .true.
+        else
+            dueig_duecol:= .false.
+        end if
+    else
+        dueig_duecol:= .false.
+    end if
+end function
