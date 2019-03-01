@@ -5,4 +5,4 @@ Il codice riportato nelle cartelle di questo Repository serve a favorire lo stud
 
 Si invitano i lettori ad utilizzare i codici riportati per implementazione e debug del proprio lavoro, nel caso si trovi una soluzione migliore di quella fornita, si è pregati di segnalarla con un Pull Requests o nel caso di problemi relativi al funzionamento del codice, con un ticket di Issues.
 
-Il codice qui riportato è interamente realizzato dagli studenti del corso di Informatica: Mauro Guida, Davide Faicchia, Francesco De Luca
+Il codice qui riportato è interamente realizzato dagli studenti del corso di Informatica: Mauro Guida, Davide Faicchia, Francesco Saverio De Luca
