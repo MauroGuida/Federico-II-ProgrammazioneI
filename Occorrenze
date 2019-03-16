@@ -11,7 +11,7 @@ function occorrenze_A_in_B (A,B)
     i:=1
     occorrenze:= 1
     
-    for j:=1 to i= N do
+    for j:=1 to j= M do
         
         k:= j
         while (A(i) = B(k) and i<=N) do
